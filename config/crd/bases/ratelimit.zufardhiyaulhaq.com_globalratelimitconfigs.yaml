@@ -42,6 +42,8 @@ spec:
                     properties:
                       domain:
                         type: string
+                      enable_x_ratelimit_headers:
+                        type: string
                       failure_mode_deny:
                         type: boolean
                       service:

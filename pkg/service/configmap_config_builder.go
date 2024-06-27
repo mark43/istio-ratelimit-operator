@@ -117,7 +117,7 @@ func NewRateLimitDescriptorFromGlobalRateLimit(globalRateLimit v1alpha1.GlobalRa
 		return descriptor, nil
 	}
 
-	descriptor, err := NewRateLimitDescriptorFromMatcher(sanitizeMatchers, globalRateLimit.Spec.Limit, globalRateLimit.Spec.ShadowMode)
+	descriptor, err := NewRateLimitDescriptorFromMatcher(sanitizeMatchers, globalRateLimit.Spec.Limit, globalRateLimit.Spec.ShadowMode, globalRateLimit.Spec.DetailedMetric)
 	if err != nil {
 		return descriptor, err
 	}
@@ -125,7 +125,7 @@ func NewRateLimitDescriptorFromGlobalRateLimit(globalRateLimit v1alpha1.GlobalRa
 	return descriptor, nil
 }
 
-func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Action, limit *v1alpha1.GlobalRateLimit_Limit, shadowMode bool) ([]types.RateLimit_Service_Descriptor, error) {
+func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Action, limit *v1alpha1.GlobalRateLimit_Limit, shadowMode bool, detailedMetric bool) ([]types.RateLimit_Service_Descriptor, error) {
 	descriptor := []types.RateLimit_Service_Descriptor{
 		{},
 	}
@@ -139,11 +139,12 @@ func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Acti
 			descriptor[0].RateLimit.RequestsPerUnit = limit.RequestsPerUnit
 			descriptor[0].RateLimit.Unit = limit.Unit
 			descriptor[0].ShadowMode = shadowMode
+			descriptor[0].DetailedMetric = detailedMetric
 
 			return descriptor, nil
 		}
 
-		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode)
+		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode, detailedMetric)
 		if err != nil {
 			return descriptor, fmt.Errorf("error")
 		}
@@ -158,11 +159,12 @@ func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Acti
 			descriptor[0].RateLimit.RequestsPerUnit = limit.RequestsPerUnit
 			descriptor[0].RateLimit.Unit = limit.Unit
 			descriptor[0].ShadowMode = shadowMode
+			descriptor[0].DetailedMetric = detailedMetric
 
 			return descriptor, nil
 		}
 
-		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode)
+		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode, detailedMetric)
 		if err != nil {
 			return descriptor, fmt.Errorf("error")
 		}
@@ -184,11 +186,12 @@ func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Acti
 			descriptor[0].RateLimit.RequestsPerUnit = limit.RequestsPerUnit
 			descriptor[0].RateLimit.Unit = limit.Unit
 			descriptor[0].ShadowMode = shadowMode
+			descriptor[0].DetailedMetric = detailedMetric
 
 			return descriptor, nil
 		}
 
-		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode)
+		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode, detailedMetric)
 		if err != nil {
 			return descriptor, fmt.Errorf("error")
 		}
@@ -205,11 +208,12 @@ func NewRateLimitDescriptorFromMatcher(matchers []*v1alpha1.GlobalRateLimit_Acti
 			descriptor[0].RateLimit.RequestsPerUnit = limit.RequestsPerUnit
 			descriptor[0].RateLimit.Unit = limit.Unit
 			descriptor[0].ShadowMode = shadowMode
+			descriptor[0].DetailedMetric = detailedMetric
 
 			return descriptor, nil
 		}
 
-		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode)
+		nestedDescriptor, err := NewRateLimitDescriptorFromMatcher(matchers[1:], limit, shadowMode, detailedMetric)
 		if err != nil {
 			return descriptor, fmt.Errorf("error")
 		}

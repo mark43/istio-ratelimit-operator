@@ -108,10 +108,11 @@ func (g *V3SidecarBuilder) buildHttpFilterPatchValue() (string, error) {
 	values := types.HttpFilterPatchValues{
 		Name: "envoy.filters.http.ratelimit",
 		TypedConfig: types.TypedConfig{
-			Type:            "type.googleapis.com/envoy.extensions.filters.http.ratelimit.v3.RateLimit",
-			Domain:          g.Config.Spec.Ratelimit.Spec.Domain,
-			FailureModeDeny: &g.Config.Spec.Ratelimit.Spec.FailureModeDeny,
-			Timeout:         g.Config.Spec.Ratelimit.Spec.Timeout,
+			Type:                    "type.googleapis.com/envoy.extensions.filters.http.ratelimit.v3.RateLimit",
+			Domain:                  g.Config.Spec.Ratelimit.Spec.Domain,
+			FailureModeDeny:         &g.Config.Spec.Ratelimit.Spec.FailureModeDeny,
+			EnableXRateLimitHeaders: g.Config.Spec.Ratelimit.Spec.EnableXRateLimitHeaders,
+			Timeout:                 g.Config.Spec.Ratelimit.Spec.Timeout,
 			RateLimitService: types.RateLimitService{
 				TransportAPIVersion: "V3",
 				GRPCService: types.GRPCService{

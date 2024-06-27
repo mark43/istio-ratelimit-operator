@@ -47,10 +47,11 @@ type GlobalRateLimitConfigRatelimit struct {
 }
 
 type GlobalRateLimitConfigRatelimitSpec struct {
-	Domain          string                                    `json:"domain"`
-	FailureModeDeny bool                                      `json:"failure_mode_deny"`
-	Timeout         string                                    `json:"timeout"`
-	Service         GlobalRateLimitConfigRatelimitSpecService `json:"service"`
+	Domain                  string                                    `json:"domain"`
+	FailureModeDeny         bool                                      `json:"failure_mode_deny"`
+	EnableXRateLimitHeaders string                                    `json:"enable_x_ratelimit_headers,omitempty"`
+	Timeout                 string                                    `json:"timeout"`
+	Service                 GlobalRateLimitConfigRatelimitSpecService `json:"service"`
 }
 
 type RateLimitType string

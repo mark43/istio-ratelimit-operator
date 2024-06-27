@@ -34,9 +34,10 @@ var V3SidecarBuilderTestGrid = []V3SidecarBuilderTestCase{
 				},
 				Ratelimit: v1alpha1.GlobalRateLimitConfigRatelimit{
 					Spec: v1alpha1.GlobalRateLimitConfigRatelimitSpec{
-						Domain:          "foo",
-						FailureModeDeny: false,
-						Timeout:         "10s",
+						Domain:                  "foo",
+						FailureModeDeny:         false,
+						EnableXRateLimitHeaders: "DRAFT_VERSION_03",
+						Timeout:                 "10s",
 						Service: v1alpha1.GlobalRateLimitConfigRatelimitSpecService{
 							Address: "grpc-testing.default",
 							Port:    3000,

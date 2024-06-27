@@ -7,18 +7,20 @@ type HttpFilterPatchValues struct {
 }
 
 type Config struct {
-	Domain           string           `json:"domain,omitempty" yaml:"domain,omitempty"`
-	FailureModeDeny  *bool            `json:"failure_mode_deny,omitempty" yaml:"failure_mode_deny,omitempty"`
-	Timeout          string           `json:"timeout,omitempty" yaml:"timeout,omitempty"`
-	RateLimitService RateLimitService `json:"rate_limit_service,omitempty" yaml:"rate_limit_service,omitempty"`
+	Domain                  string           `json:"domain,omitempty" yaml:"domain,omitempty"`
+	FailureModeDeny         *bool            `json:"failure_mode_deny,omitempty" yaml:"failure_mode_deny,omitempty"`
+	EnableXRateLimitHeaders string           `json:"enable_x_ratelimit_headers,omitempty" yaml:"enable_x_ratelimit_headers,omitempty"`
+	Timeout                 string           `json:"timeout,omitempty" yaml:"timeout,omitempty"`
+	RateLimitService        RateLimitService `json:"rate_limit_service,omitempty" yaml:"rate_limit_service,omitempty"`
 }
 
 type TypedConfig struct {
-	Type             string           `json:"@type,omitempty" yaml:"@type,omitempty"`
-	Domain           string           `json:"domain,omitempty" yaml:"domain,omitempty"`
-	FailureModeDeny  *bool            `json:"failure_mode_deny,omitempty" yaml:"failure_mode_deny,omitempty"`
-	Timeout          string           `json:"timeout,omitempty" yaml:"timeout,omitempty"`
-	RateLimitService RateLimitService `json:"rate_limit_service,omitempty" yaml:"rate_limit_service,omitempty"`
+	Type                    string           `json:"@type,omitempty" yaml:"@type,omitempty"`
+	Domain                  string           `json:"domain,omitempty" yaml:"domain,omitempty"`
+	FailureModeDeny         *bool            `json:"failure_mode_deny,omitempty" yaml:"failure_mode_deny,omitempty"`
+	EnableXRateLimitHeaders string           `json:"enable_x_ratelimit_headers,omitempty" yaml:"enable_x_ratelimit_headers,omitempty"`
+	Timeout                 string           `json:"timeout,omitempty" yaml:"timeout,omitempty"`
+	RateLimitService        RateLimitService `json:"rate_limit_service,omitempty" yaml:"rate_limit_service,omitempty"`
 }
 
 type RateLimitService struct {

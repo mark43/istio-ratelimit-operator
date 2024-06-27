@@ -37,6 +37,8 @@ spec:
             properties:
               config:
                 type: string
+              detailed_metric:
+                type: boolean
               identifier:
                 type: string
               limit:
