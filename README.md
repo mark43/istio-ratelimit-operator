@@ -2,15 +2,15 @@
 
 Istio ratelimit operator provide an easy way to configure Global or Local Ratelimit in Istio mesh. Istio ratelimit operator also support EnvoyFilter versioning!
 
-![Version: 2.13.0](https://img.shields.io/badge/Version-2.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.13.0](https://img.shields.io/badge/AppVersion-2.13.0-informational?style=flat-square) [![made with Go](https://img.shields.io/badge/made%20with-Go-brightgreen)](http://golang.org) [![GitHub issues](https://img.shields.io/github/issues/zufardhiyaulhaq/istio-ratelimit-operator)](https://github.com/zufardhiyaulhaq/istio-ratelimit-operator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/zufardhiyaulhaq/istio-ratelimit-operator)](https://github.com/zufardhiyaulhaq/istio-ratelimit-operator/pulls)[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/istio-ratelimit-operator)](https://artifacthub.io/packages/search?repo=istio-ratelimit-operator)
+![Version: 2.14.0](https://img.shields.io/badge/Version-2.14.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.14.0](https://img.shields.io/badge/AppVersion-2.14.0-informational?style=flat-square) [![made with Go](https://img.shields.io/badge/made%20with-Go-brightgreen)](http://golang.org) [![GitHub issues](https://img.shields.io/github/issues/mark43/istio-ratelimit-operator)](https://github.com/mark43/istio-ratelimit-operator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/mark43/istio-ratelimit-operator)](https://github.com/mark43/istio-ratelimit-operator/pulls)[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/istio-ratelimit-operator)](https://artifacthub.io/packages/search?repo=istio-ratelimit-operator)
 
 ## Installation
 
 To install the chart with the release name `my-istio-ratelimit-operator`:
 
 ```console
-helm repo add istio-ratelimit-operator https://zufardhiyaulhaq.com/istio-ratelimit-operator/charts/releases/
-helm install my-istio-ratelimit-operator istio-ratelimit-operator/istio-ratelimit-operator --version 2.13.0 --values values.yaml
+helm repo add istio-ratelimit-operator https://mark43.com/istio-ratelimit-operator/charts/releases/
+helm install my-istio-ratelimit-operator istio-ratelimit-operator/istio-ratelimit-operator --version 2.14.0 --values values.yaml
 ```
 
 ## Usage
@@ -27,14 +27,14 @@ istio-public-gateway   3m1s
 
 kubectl get GlobalRateLimit
 NAME                                          AGE
-helloworld-zufardhiyaulhaq-com-bar-route      2m57s
-helloworld-zufardhiyaulhaq-com-baz-route      2m56s
-helloworld-zufardhiyaulhaq-com-corge-route    2m53s
-helloworld-zufardhiyaulhaq-com-foo-route      2m57s
-helloworld-zufardhiyaulhaq-com-garply-route   2m51s
-helloworld-zufardhiyaulhaq-com-grault-route   2m52s
-helloworld-zufardhiyaulhaq-com-quux-route     2m54s
-helloworld-zufardhiyaulhaq-com-qux-route      2m55s
+helloworld-mark43-com-bar-route      2m57s
+helloworld-mark43-com-baz-route      2m56s
+helloworld-mark43-com-corge-route    2m53s
+helloworld-mark43-com-foo-route      2m57s
+helloworld-mark43-com-garply-route   2m51s
+helloworld-mark43-com-grault-route   2m52s
+helloworld-mark43-com-quux-route     2m54s
+helloworld-mark43-com-qux-route      2m55s
 
 kubectl get RateLimitService
 NAME                               AGE
@@ -45,22 +45,22 @@ public-gateway-ratelimit-service   2m33s
 ```
 kubectl get envoyfilter
 NAME                                                                                                                                         AGE
-helloworld-zufardhiyaulhaq-com-bar-route-1.8                                                                                                 3m7s
-helloworld-zufardhiyaulhaq-com-bar-route-1.9                                                                                                 3m7s
-helloworld-zufardhiyaulhaq-com-baz-route-1.8                                                                                                 3m7s
-helloworld-zufardhiyaulhaq-com-baz-route-1.9                                                                                                 3m6s
-helloworld-zufardhiyaulhaq-com-corge-route-1.8                                                                                               3m8s
-helloworld-zufardhiyaulhaq-com-corge-route-1.9                                                                                               3m4s
-helloworld-zufardhiyaulhaq-com-foo-route-1.8                                                                                                 3m8s
-helloworld-zufardhiyaulhaq-com-foo-route-1.9                                                                                                 3m7s
-helloworld-zufardhiyaulhaq-com-garply-route-1.8                                                                                              3m10s
-helloworld-zufardhiyaulhaq-com-garply-route-1.9                                                                                              3m8s
-helloworld-zufardhiyaulhaq-com-grault-route-1.8                                                                                              3m10s
-helloworld-zufardhiyaulhaq-com-grault-route-1.9                                                                                              3m7s
-helloworld-zufardhiyaulhaq-com-quux-route-1.8                                                                                                3m9s
-helloworld-zufardhiyaulhaq-com-quux-route-1.9                                                                                                3m5s
-helloworld-zufardhiyaulhaq-com-qux-route-1.8                                                                                                 3m11s
-helloworld-zufardhiyaulhaq-com-qux-route-1.9                                                                                                 3m6s
+helloworld-mark43-com-bar-route-1.8                                                                                                 3m7s
+helloworld-mark43-com-bar-route-1.9                                                                                                 3m7s
+helloworld-mark43-com-baz-route-1.8                                                                                                 3m7s
+helloworld-mark43-com-baz-route-1.9                                                                                                 3m6s
+helloworld-mark43-com-corge-route-1.8                                                                                               3m8s
+helloworld-mark43-com-corge-route-1.9                                                                                               3m4s
+helloworld-mark43-com-foo-route-1.8                                                                                                 3m8s
+helloworld-mark43-com-foo-route-1.9                                                                                                 3m7s
+helloworld-mark43-com-garply-route-1.8                                                                                              3m10s
+helloworld-mark43-com-garply-route-1.9                                                                                              3m8s
+helloworld-mark43-com-grault-route-1.8                                                                                              3m10s
+helloworld-mark43-com-grault-route-1.9                                                                                              3m7s
+helloworld-mark43-com-quux-route-1.8                                                                                                3m9s
+helloworld-mark43-com-quux-route-1.9                                                                                                3m5s
+helloworld-mark43-com-qux-route-1.8                                                                                                 3m11s
+helloworld-mark43-com-qux-route-1.9                                                                                                 3m6s
 
 istio-public-gateway-1.8                                                                                                                     3m11s
 istio-public-gateway-1.9                                                                                                                     3m11s
@@ -99,19 +99,20 @@ public-gateway.method.grault-route_grault-route: unit=HOUR requests_per_unit=60
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | extraLabels | object | `{}` |  |
-| operator.image | string | `"zufardhiyaulhaq/istio-ratelimit-operator"` |  |
+| operator.image | string | `"docker.repository.mark43.io/istio-ratelimit-operator"` |  |
 | operator.replica | int | `1` |  |
-| operator.tag | string | `"v2.13.0"` |  |
+| operator.tag | string | `"v2.14.0"` |  |
 | resources.limits.cpu | string | `"512m"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |
 | resources.requests.cpu | string | `"256m"` |  |
 | resources.requests.memory | string | `"256Mi"` |  |
 | serviceAccount.imagePullSecrets | list | `[]` |  |
-| settings.ratelimitservice.image | string | `"envoyproxy/ratelimit:5e1be594"` |  |
+| serviceMonitors | bool | `true` |  |
+| settings.ratelimitservice.image | string | `"envoyproxy/ratelimit:91484c59"` |  |
 | settings.statsdExporter.image | string | `"prom/statsd-exporter:v0.26.1"` |  |
 
 ----------------------------------------------
-Autogenerated from chart metadata using [helm-docs v1.13.1](https://github.com/norwoodj/helm-docs/releases/v1.13.1)
+Autogenerated from chart metadata using [helm-docs v1.14.2](https://github.com/norwoodj/helm-docs/releases/v1.14.2)
 
 ## Supported Releases
 

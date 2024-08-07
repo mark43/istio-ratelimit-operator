@@ -70,7 +70,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimitconfigs
   verbs:
@@ -82,13 +82,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimitconfigs/finalizers
   verbs:
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimitconfigs/status
   verbs:
@@ -96,7 +96,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimits
   verbs:
@@ -108,13 +108,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimits/finalizers
   verbs:
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - globalratelimits/status
   verbs:
@@ -122,7 +122,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - ratelimitservices
   verbs:
@@ -134,13 +134,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - ratelimitservices/finalizers
   verbs:
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - ratelimitservices/status
   verbs:
@@ -148,7 +148,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimitconfigs
   verbs:
@@ -160,13 +160,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimitconfigs/status
   verbs:
   - get
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimitconfigs
   verbs:
@@ -174,13 +174,13 @@ rules:
   - list
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimitconfigs/status
   verbs:
   - get
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimits
   verbs:
@@ -192,13 +192,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimits/status
   verbs:
   - get
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimits
   verbs:
@@ -206,7 +206,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - ratelimit.zufardhiyaulhaq.com
+  - ratelimit.mark43.com
   resources:
   - localratelimits/status
   verbs:

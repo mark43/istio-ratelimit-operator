@@ -4,4 +4,4 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: $(CERTIFICATE_NAMESPACE)/$(CERTIFICATE_NAME)
-  name: globalratelimits.ratelimit.zufardhiyaulhaq.com
+  name: globalratelimits.ratelimit.mark43.com

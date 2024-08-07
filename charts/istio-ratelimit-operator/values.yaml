@@ -1,8 +1,8 @@
 operator:
   # image of istio-ratelimit-operator
-  image: "zufardhiyaulhaq/istio-ratelimit-operator"
+  image: "docker.repository.mark43.io/istio-ratelimit-operator"
   # tag of istio-ratelimit-operator image
-  tag: "v2.13.0"
+  tag: "v2.14.0"
   # number of replica for deployment
   replica: 1
 
@@ -16,7 +16,7 @@ resources:
 
 settings:
   ratelimitservice:
-    image: envoyproxy/ratelimit:5e1be594
+    image: envoyproxy/ratelimit:91484c59
   statsdExporter:
     image: prom/statsd-exporter:v0.26.1
 
@@ -24,3 +24,5 @@ serviceAccount:
   imagePullSecrets: []
 
 extraLabels: {}
+
+serviceMonitors: true

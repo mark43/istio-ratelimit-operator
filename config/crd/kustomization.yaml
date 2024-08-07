@@ -2,11 +2,11 @@
 # since it depends on service name and namespace that are out of this kustomize package.
 # It should be run by config/default
 resources:
-- bases/ratelimit.zufardhiyaulhaq.com_globalratelimitconfigs.yaml
-- bases/ratelimit.zufardhiyaulhaq.com_globalratelimits.yaml
-- bases/ratelimit.zufardhiyaulhaq.com_ratelimitservices.yaml
-- bases/ratelimit.zufardhiyaulhaq.com_localratelimitconfigs.yaml
-- bases/ratelimit.zufardhiyaulhaq.com_localratelimits.yaml
+- bases/ratelimit.mark43.com_globalratelimitconfigs.yaml
+- bases/ratelimit.mark43.com_globalratelimits.yaml
+- bases/ratelimit.mark43.com_ratelimitservices.yaml
+- bases/ratelimit.mark43.com_localratelimitconfigs.yaml
+- bases/ratelimit.mark43.com_localratelimits.yaml
 #+kubebuilder:scaffold:crdkustomizeresource
 
 patchesStrategicMerge:
