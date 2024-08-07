@@ -10,8 +10,9 @@ import (
 
 func TestNewStatsdRegexMatcherFromGlobalRateLimitMatcher(t *testing.T) {
 	testCases := []struct {
-		matchers []*v1alpha1.GlobalRateLimit_Action
-		expected string
+		matchers        []*v1alpha1.GlobalRateLimit_Action
+		detailed_metric bool
+		expected        string
 	}{
 		{
 			matchers: []*v1alpha1.GlobalRateLimit_Action{
@@ -26,7 +27,8 @@ func TestNewStatsdRegexMatcherFromGlobalRateLimitMatcher(t *testing.T) {
 					RemoteAddress: &v1alpha1.GlobalRateLimit_Action_RemoteAddress{},
 				},
 			},
-			expected: "user-agent.remote_address",
+			detailed_metric: false,
+			expected:        "user-agent.remote_address",
 		},
 		{
 			matchers: []*v1alpha1.GlobalRateLimit_Action{
@@ -50,7 +52,8 @@ func TestNewStatsdRegexMatcherFromGlobalRateLimitMatcher(t *testing.T) {
 					},
 				},
 			},
-			expected: "authorization.header_match_content-type",
+			detailed_metric: false,
+			expected:        "authorization.header_match_content-type",
 		},
 		{
 			matchers: []*v1alpha1.GlobalRateLimit_Action{},
@@ -59,7 +62,7 @@ func TestNewStatsdRegexMatcherFromGlobalRateLimitMatcher(t *testing.T) {
 	}
 
 	for _, tc := range testCases {
-		actual := service.NewStatsdRegexMatcherFromGlobalRateLimitMatcher(tc.matchers)
+		actual := service.NewStatsdRegexMatcherFromGlobalRateLimitMatcher(tc.matchers, tc.detailed_metric)
 		if actual != tc.expected {
 			t.Errorf("Expected regex '%s' but got '%s' for matchers %+v", tc.expected, actual, tc.matchers)
 		}

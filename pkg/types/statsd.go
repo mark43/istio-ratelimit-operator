@@ -1,6 +1,10 @@
 package types
 
-import "gopkg.in/yaml.v2"
+import (
+	"strings"
+
+	"gopkg.in/yaml.v2"
+)
 
 type MetricMapper struct {
 	Mappings []MetricMapping `yaml:"mappings"`
@@ -8,6 +12,7 @@ type MetricMapper struct {
 
 type MetricMapping struct {
 	Match           string            `yaml:"match"`
+	MatchType       string            `yaml:"match_type,omitempty"`
 	Name            string            `yaml:"name"`
 	Labels          map[string]string `yaml:"labels,omitempty"`
 	ObserverType    ObserverType      `yaml:"observer_type,omitempty"`
@@ -38,5 +43,5 @@ func (n *MetricMapper) String() (string, error) {
 		return "", err
 	}
 
-	return string(bytes), nil
+	return strings.ReplaceAll(string(bytes), "'", ""), nil
 }
