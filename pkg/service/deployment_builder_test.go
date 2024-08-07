@@ -61,6 +61,20 @@ func TestDeploymentBuilder(t *testing.T) {
 							},
 						},
 						Spec: corev1.PodSpec{
+							TopologySpreadConstraints: []corev1.TopologySpreadConstraint{
+								{
+									MaxSkew:           1,
+									TopologyKey:       "kubernetes.io/hostname",
+									WhenUnsatisfiable: corev1.DoNotSchedule,
+									LabelSelector: &metav1.LabelSelector{
+										MatchLabels: map[string]string{
+											"app.kubernetes.io/name":       "baz",
+											"app.kubernetes.io/managed-by": "istio-rateltimit-operator",
+											"app.kubernetes.io/created-by": "baz",
+										},
+									},
+								},
+							},
 							Containers: []corev1.Container{
 								{
 									Name:    "baz",
@@ -184,6 +198,20 @@ func TestDeploymentBuilder(t *testing.T) {
 							},
 						},
 						Spec: corev1.PodSpec{
+							TopologySpreadConstraints: []corev1.TopologySpreadConstraint{
+								{
+									MaxSkew:           1,
+									TopologyKey:       "kubernetes.io/hostname",
+									WhenUnsatisfiable: corev1.DoNotSchedule,
+									LabelSelector: &metav1.LabelSelector{
+										MatchLabels: map[string]string{
+											"app.kubernetes.io/name":       "baz",
+											"app.kubernetes.io/managed-by": "istio-rateltimit-operator",
+											"app.kubernetes.io/created-by": "baz",
+										},
+									},
+								},
+							},
 							Containers: []corev1.Container{
 								{
 									Name:    "baz",
